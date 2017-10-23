@@ -75,15 +75,16 @@ class Deck{
 	//TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck){
 		cards=new ArrayList<Card>();
-		for(int i=1;i<=nDeck;i++){
-			for(int j=1;j<=4;j++){
-				for(int k=1;k<=13;k++){
+		for(int i=1;i<=nDeck;i++) {
+			for(int j=1;j<=4;j++) {
+				for(int k=1;k<=13;k++) {
 					Card card=new Card(j,k);
 					cards.add(card);
-				
+				}
 			}
 		}
-		}
+		
+					
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		//Sample code start
@@ -98,7 +99,8 @@ class Deck{
 		Card CardDetail= cards.get(index);
 		Card c=new Card(CardDetail.getSuit(),CardDetail.getRank());
 		c.printCard(CardDetail.getSuit(),CardDetail.getRank());
-		}//Hint: print all items in ArrayList<Card> cards, 
+		}
+		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
 
 	}
