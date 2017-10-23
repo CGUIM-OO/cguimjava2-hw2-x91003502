@@ -3,8 +3,9 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * @author TODO: please add student ID and name here
- * Try to write some comments for your codes (methods, 15 points)
+ * @author TODO: B0322017 �L����
+ * This program will be needed to key in how many deck, then it will show all cards on the screen 
+   according to the order.
  */
 public class HW2 {
 
@@ -26,8 +27,8 @@ public class HW2 {
 	}
 	/**
 	 * This method is used for checking your result, not a part of your HW2
-	 * @param allCards 所有的牌
-	 * @param nDeck 總共有幾副牌
+	 * @param allCards
+	 * @param nDeck 
 	 * @return
 	 */
 	private static boolean isAllCardsCorrect(ArrayList<Card> allCards,int nDeck){
@@ -64,13 +65,25 @@ public class HW2 {
 
 }
 /**
- * Description: TODO: please add description here
+ * Description: TODO: This class includes three methods which are Deck, printDeck, and getAllCards.
+ * Deck method is used to create cards, and each deck has 52 cards.
+ * PrintDeck method is used to show all cards on the screen.
+ * getAllCards is used by teachers in order to check whether students' programs work precisely.
  */
 class Deck{
 	private ArrayList<Card> cards;
 	//TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck){
 		cards=new ArrayList<Card>();
+		for(int i=1;i<=nDeck;i++){
+			for(int j=1;j<=4;j++){
+				for(int k=1;k<=13;k++){
+					Card card=new Card(j,k);
+					cards.add(card);
+				
+			}
+		}
+		}
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		//Sample code start
@@ -81,7 +94,11 @@ class Deck{
 	}	
 	//TODO: Please implement the method to print all cards on screen (10 points)
 	public void printDeck(){
-		//Hint: print all items in ArrayList<Card> cards, 
+		for(int index=0;index<cards.size();index++) {
+		Card CardDetail= cards.get(index);
+		Card c=new Card(CardDetail.getSuit(),CardDetail.getRank());
+		c.printCard(CardDetail.getSuit(),CardDetail.getRank());
+		}//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
 
 	}
@@ -90,7 +107,8 @@ class Deck{
 	}
 }
 /**
- * Description: TODO: please add description here
+ * Description: TODO: This section will construct the properties of each cards which are suit and rank.
+ * For example; Clubs Ace, etc
  */
 class Card{
 	private int suit; //Definition: 1~4, Clubs=1, Diamonds=2, Hearts=3, Spades=4
@@ -104,7 +122,62 @@ class Card{
 		rank=r;
 	}	
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
-	public void printCard(){
+	public void printCard(int s,int r){
+		switch(s){
+		case 1:
+			System.out.print("Clubs ");
+			break;
+		case 2:
+			System.out.print("Diamonds ");
+			break;
+		case 3:
+			System.out.print("Hearts ");
+			break;
+		case 4:
+			System.out.print("Spades ");
+			break;
+		}
+		switch(r){
+		case 1:
+			System.out.println("Ace");
+			break;
+		case 2:
+			System.out.println(r);
+			break;
+		case 3:
+			System.out.println(r);
+			break;
+		case 4:
+			System.out.println(r);
+			break;
+		case 5:
+			System.out.println(r);
+			break;
+		case 6:
+			System.out.println(r);
+			break;
+		case 7:
+			System.out.println(r);
+			break;
+		case 8:
+			System.out.println(r);
+			break;
+		case 9:
+			System.out.println(r);
+			break;
+		case 10:
+			System.out.println(r);
+			break;
+		case 11:
+			System.out.println("Jack");
+			break;
+		case 12:
+			System.out.println("Queen");
+			break;
+		case 13:
+			System.out.println("King");
+			break;
+		}
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
 
 	}
