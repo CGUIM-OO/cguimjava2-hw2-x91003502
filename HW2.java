@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * @author TODO: B0322017 ªL¨°«Ø
+ * @author TODO: B0322017 æž—è¾°å»º
  * This program will be needed to key in how many deck, then it will show all cards on the screen 
    according to the order.
  */
